@@ -1,10 +1,15 @@
-<img src="https://c.s-microsoft.com/favicon.ico" alt="Microsoft logo" width="48px">
+> [!IMPORTANT]
+> **this repository is being revamped to allow more control over what happens on a page.** for more information, refer to [this section](#how-to-use).
+
+<br>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Microsoft_icon.svg" alt="Microsoft logo" width="48px">
 
 # Windows Spinners
 
 visit the demo: https://thebelovedmoon.github.io/segoeLoaders
 
-this page demonstrates how the infamous Windows spinners (debuted since Windows 8) are displayed.
+this page demonstrates how the familiar Windows spinners/throbbers (debuted since Windows 8) are displayed.
 
 ## how it works
 
@@ -18,7 +23,7 @@ this page has the following features and quirks:
 
 ### infinite spinner animation
 
-this page harnesses a complex JavaScript function that makes each glyph loop endlessly. you can learn more about it in the [resouces](#resources) section.
+this page harnesses a complex JavaScript function that makes each glyph loop endlessly. you can learn more about it in the [resources](#resources) section.
 
 ### consolidated to an AIO (all-in-one) page
 
@@ -54,6 +59,17 @@ this page lets you see the animations of the spinners in various FPS values!! to
     - `{type}` can be "normal" or "condensed" (the font variation)
     - `{fps}` can be any number in frames per second
 3. enjoy the spinner animation!!
+
+### can I embed it on my website?
+
+as of 9 Sep 2026, I'm working on it!!
+
+at the moment, I'm planning on rebuilding the page in order to be more intuitive with more functions that you can work with.
+
+what's more, you can add some parts to your existing workflows and have them synchronized alongside the rest of your website -- like font colors, for example!!
+
+> [!NOTE]
+> updates will be carried out as soon as they're released through X at [@thebelovedmoon](https://x.com/thebelovedmoon).
 
 ## resources
 
