@@ -3,6 +3,7 @@
 
 <br>
 
+<img src="https://thebelovedmoon.github.io/assets/web/favicon/maria_1_sq.png" alt="Microsoft logo" width="48px">
 <img src="./assets/svg/msft.svg" alt="Microsoft logo" width="48px">
 
 # Windows Spinners
