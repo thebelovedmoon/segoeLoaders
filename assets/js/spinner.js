@@ -1,8 +1,4 @@
-// input parameters:
-// ?version={1,2}&type={normal,condensed}&fps={30,60,..}
-
-let version, type, fps,
-  spinner1 = [
+let spinner1 = [
     "&#xE052;",
     "&#xE053;",
     "&#xE054;",
@@ -250,105 +246,47 @@ let version, type, fps,
   c = 0;
 
 function que() {
-  version = new URLSearchParams(window.location.search).get("version");
-  switch (version) {
-    case "1":
-      function spnr1() {
-        let spn = c % spinner1.length;
-        document.getElementById("replaceText").innerHTML = `
-          <div>
-            <p style="font-size: 8rem;">${spinner1[spn]}</p>
-          </div>
-        `;
-        c++;
-      }
-      setInterval(spnr1, spinnerSpeed());
-      break;
-    case "2":
-      function spnr2() {
-        let spn = c % spinner2.length;
-        document.getElementById("replaceText").innerHTML = `
-          <div>
-            <p style="font-size: 8rem;">${spinner2[spn]}</p>
-          </div>
-        `;
-        c++;
-      }
-      setInterval(spnr2, spinnerSpeed());
-      break;
-    default:
-      // returns default block, as specified below
-      document.getElementById("replaceText").innerHTML = `
-        <div>
-          <p>
-            if you're seeing this page, then you aren't seeing the loaders yet!!
-          </p>
-          <br />
-          <p>to get started, key in the following in the URL:</p>
-          <p>
-            <code>?version={ver}&type={typ}&fps={fps}</code>
-          </p>
-          <br />
-          <p>where:</p>
-          <p><code>{ver}</code> can be "1" or "2"</p>
-          <p><code>{type}</code> can be "normal" or "condensed"</p>
-          <p><code>{fps}</code> can be any number in frames per second</p>
-          <br />
-          <p>
-            you can also manually zoom the page to see the spinners if you can't
-            see them in normal resolutions.
-          </p>
-          <br /><br />
-          <p style="font-size: small">
-            a project by
-            <a
-              rel="noopener noreferrer"
-              href="https://github.com/thebelovedmoon/segoeLoaders"
-              target="_blank"
-              >thebelovedmoon</a
-            >
-          </p>
-        </div>
-      `;
-      return;
-  }
-  setFont();
+
+  let version = new URLSearchParams(window.location.search).get("version"),
+    type = new URLSearchParams(window.location.search).get("type"),
+    speed = new URLSearchParams(window.location.search).get("speed"),
+    size = new URLSearchParams(window.location.search).get("size"),
+    color = new URLSearchParams(window.location.search).get("color");
+  
+  if (!version && !type && !speed && !size && !color) {
+    // return to menu if one or all variables do NOT have any value
+    return window.location.replace("/segoeLoaders");
+  } else { return windowsSpinners(version, type, speed, size, color); }
+
 }
 
-function setFont() {
-  type = new URLSearchParams(window.location.search).get("type");
-  switch (type) {
+function windowsSpinners(vr, ty, sp, sz, cr) {
+  const spnr = () => {
+    if (vr == "1") {
+      let spn = c % spinner1.length;
+      document.querySelector("#replaceText").setAttribute("style", `font-family: ${spinnerFontFam(ty)}, sans-serif; font-size: ${sz}; color: #${cr ?? "white"}`)
+      document.getElementById("replaceText").innerHTML = `<div><p>${spinner1[spn]}</p></div>`;
+      c++; 
+    } else if (vr == "2") {
+      let spn = c % spinner2.length;
+      document.querySelector("#replaceText").setAttribute("style", `font-family: ${spinnerFontFam(ty)}, sans-serif; font-size: ${sz}; color: #${cr ?? "white"}`)
+      document.getElementById("replaceText").innerHTML = `<div><p>${spinner2[spn]}</p></div>`;
+      c++; 
+    } else { return window.location.replace("/segoeLoaders"); }
+  }
+  setInterval(spnr, sp)
+}
+
+function spinnerFontFam(fml) {
+  // determine what font family to use
+  switch (fml) {
     case "normal":
-      document
-        .getElementById("replaceText")
-        .setAttribute(
-          "style",
-          "font-family: 'Segoe Boot Semilight', sans-serif;"
-        );
-      return;
+      // Segoe Boot Semilight
+      return "Segoe Boot Semilight";
     case "condensed":
-      document
-        .getElementById("replaceText")
-        .setAttribute(
-          "style",
-          "font-family: 'Segoe Boot Semilight Condensed', sans-serif;"
-        );
-      return;
+      // Segoe Boot Semilight Condensed
+      return "Segoe Boot Semilight Condensed";
     default:
-      window.location.replace(`?version=${version}&type=normal&fps=30`);
-      return;
+      return window.location.replace("/segoeLoaders");
   }
-}
-
-function spinnerSpeed() {
-  fps = new URLSearchParams(window.location.search).get("fps");
-  if (isNaN(fps)) {
-    window.location.replace(`?version=${version}&type=${type}&fps=30`);
-  } else { return fps; }
-  // if (!isNaN(fps)) {
-  //   return fps;
-  // } else {
-  //   window.location.replace(`?version=${version}&type=${type}&fps=30`);
-  //   return;
-  // }
 }

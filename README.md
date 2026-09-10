@@ -3,7 +3,7 @@
 
 <br>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Microsoft_icon.svg" alt="Microsoft logo" width="48px">
+<img src="./assets/svg/msft.svg" alt="Microsoft logo" width="48px">
 
 # Windows Spinners
 

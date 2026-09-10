@@ -3,17 +3,122 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Windows Spinners</title>
-    <link
-      rel="shortcut icon"
-      href="https://c.s-microsoft.com/favicon.ico"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="./assets/css/main.css" />
-    <script src="./assets/js/main.js"></script>
+    <title>the segoeLoaders Project (Windows Spinners)</title>
+    <!-- <link rel="icon" href="/segoeLoaders/assets/svg/msft.svg" type="image/x-icon"> -->
+    <!-- <link rel="apple-touch-icon" href="/segoeLoaders/assets/svg/msft.svg" type="image/x-icon"> -->
+    <link rel="icon" href="https://thebelovedmoon.github.io/assets/web/favicon/maria_1_icon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://thebelovedmoon.github.io/assets/web/favicon/maria_1_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/segoeLoaders/assets/css/_main.css" type="text/css" media="all">
+    <script src="/segoeLoaders/assets/js/_main.js" type="text/javascript"></script>
   </head>
-  <body onload="que()">
-    <div id="replaceText">
+  <body>
+    <!-- <div class="loadingScreen">
+      <iframe src="spinner.html?version=2&type=normal&speed=30&size=5em&color=ffffff" title="Windows Spinner"></iframe>
+    </div> -->
+    <header>
+      <div class="headerTitle">the <code>segoeLoaders</code> Project</div>
+      <div class="headerNav">
+        <a rel="noopener noreferrer" href="#embedToAnyWebsite">embed</a>&emsp;<p>how it works</p>&emsp;<p>references</p>
+      </div>
+    </header>
+    <div class="heroTitle">
+      <div class="heroInner">
+        <h1>the <code>segoeLoaders</code> Project</h1>
+        <div style="width: 100%; height: 0.5em;"></div>
+        <p>the familiar Windows spinners, revisited</p>
+        <p style="font-size: 62.5%;">(and ready to embed!!)</p>
+      </div>
     </div>
+    <div id="embedToAnyWebsite">
+      <div style="text-align: center; width: 37.5rem; max-width: 100%; margin: 0 auto;">
+        <h2>embed on your website</h2>
+        <div style="width: 100%; height: 0.5em;"></div>
+        <p>ready to take the familiar spinner to your website? start embedding!!</p>
+      </div>
+      <br>
+      <div class="embedDialog">
+        <div class="col1">
+          <h3>parameters</h3>
+          <br>
+          <h4>select version</h4>
+          <select title="spinner version" id="spinnerVer"
+            oninput="{ document.querySelector('.finalSpinnerVersion').innerText = this.value; }">
+            <option value="" disabled selected>select one..</option>
+            <option value="1">version 1 (Windows 8-10 / Metro)</option>
+            <option value="2">version 2 (Windows 10X-11 / Fluent)</option>
+          </select>
+          <div style="width: 100%; height: 0.5em;"></div>
+          <h4>select rendering type</h4>
+          <select title="spinner type" id="spinnerType"
+            oninput="{ document.querySelector('.finalSpinnerType').innerText = this.value; }">
+            <option value="" disabled selected>select one..</option>
+            <option value="normal">normal (will use Segoe Boot Semilight)</option>
+            <option value="condensed">condensed (will use Segoe Boot Semilight Condensed)</option>
+          </select>
+          <div style="width: 100%; height: 0.5em;"></div>
+          <h4>set speed</h4>
+          <p style="font-size: 62.5%;">the greater the speed, the slower the animation.</p>
+          <input type="range" title="spinner speed" id="spinnerFPS" min="1" max="300" value="30" step="1"
+            oninput="{
+              document.querySelector('.viewFPSOutput').innerText = this.value;
+              document.querySelector('.finalSpinnerSpeed').innerText = this.value;
+            }">
+          <p style="font-size: 62.5%;">speed: <span class="viewFPSOutput">30</span></p>
+          <div style="width: 100%; height: 0.5em;"></div>
+          <h4>set size</h4>
+          <div class="setASizeDialog">
+            <input type="number" title="spinner size" id="spinnerSizeNum"
+              oninput="{ document.querySelector('.finalSpinnerSizeNum').innerText = this.value; }">
+            <select title="spinner size measurement" id="spinnerSizeMeasure"
+              oninput="{ document.querySelector('.finalSpinnerSizeMeasure').innerText = this.value; }">
+              <option value="px" selected>px</option>
+              <option value="em">em</option>
+              <option value="rem">rem</option>
+              <option value="pt">pt</option>
+              <option value="pc">pc</option>
+              <option value="ch">ch</option>
+              <option value="ex">ex</option>
+            </select>
+          </div>
+          <div style="width: 100%; height: 0.5em;"></div>
+          <h4>set color</h4>
+          <input type="color" title="spinner color" id="spinnerColor" value="#3d374c"
+            oninput="{
+              document.querySelector('.viewColorOutput').innerText = this.value;
+              document.querySelector('.finalSpinnerColor').innerText = this.value.replaceAll('#','');
+            }">
+          <p style="font-size: 62.5%;">color: <span class="viewColorOutput">#3d374c</span></p>
+          <br>
+          <button style="width: max-content;" onclick="{ renderEmbedSpinner(); }">render!!</button>
+        </div>
+        <div class="col2">
+          <h3>result</h3>
+          <br>
+          <p>here's what the URL will look like:</p>
+          <div style="width: 100%; height: 0.5em;"></div>
+          <p><code class="urlParser" style="background-color: #00000020; font-size: 75%;">https://thebelovedmoon.github.io/segoeLoaders/spinner?version=<span class="finalSpinnerVersion"></span>&type=<span class="finalSpinnerType"></span>&speed=<span class="finalSpinnerSpeed">30</span>&size=<span class="finalSpinnerSizeNum"></span><span class="finalSpinnerSizeMeasure">px</span>&color=<span class="finalSpinnerColor">3d374c</span></code></p>
+          <div style="width: 100%; height: 0.5em;"></div>
+          <p class="copyToClipboardInstruction" style="font-size: 62.5%;">select the URL above to copy to clipboard.</p>
+          <br>
+          <div class="renderedSpinner">
+            <h4>rendered output</h4>
+            <div style="width: 100%; height: 0.5em;"></div>
+            <label>
+              <input type="checkbox" title="wallpaper is enabled" id="wallpaperEnabledToggle" onclick="{ toggleWallpaperEnable(); }"> enable background
+            </label>
+            <div style="width: 100%; height: 0.5em;"></div>
+            <div class="isWallpaperEnabled">
+              <iframe src="" title="Windows Spinner (end result)"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Bing Daily Images powered by BitURL (locale: en-US)</p>
+      <br>
+      <p><a rel="noopener noreferrer" href="https://github.com/thebelovedmoon/segoeLoaders" target="_blank">made with &#x2665; by thebelovedmoon / thebelovedmoon and associates (tbmassoc), lic. MIT</a></p>
+      <p>Segoe typography &copy; <img class="inlineFoot" src="/segoeLoaders/assets/svg/msftWide.svg" alt="Microsoft Corporation">, and may be proprietary</p>
+    </footer>
   </body>
 </html>
