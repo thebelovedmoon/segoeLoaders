@@ -40,6 +40,8 @@ code {
 
 iframe { border: none !important; }
 
+input[type="checkbox"] { font-size: 75%; }
+
 .loadingScreen {
   width: 100%;
   height: 100%;
@@ -100,7 +102,7 @@ footer {
   padding: 12.5em 0;
   text-align: center;
   background-color: #000082;
-  background-image: url("https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=en-US");
+  background-image: url("https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=en-GB");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -152,7 +154,6 @@ footer {
     }
     .col2 {
       .copyToClipboardInstruction { display: none; }
-      input { font-size: 75%; }
       .isWallpaperEnabled {
         width: 30rem;
         max-width: 100%;
@@ -170,5 +171,18 @@ footer {
         }
       }
     }
+  }
+}
+
+#terms {
+  background-color: white;
+  color: black;
+  padding: 2.5em 0;
+  blockquote {
+    background-color: #f2502220;
+    border-left: 0.5em solid #f25022;
+    padding: 1em;
+    /* color: white; */
+    font-family: "Inter", sans-serif;
   }
 }

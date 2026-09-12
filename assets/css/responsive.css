@@ -16,7 +16,7 @@
 }
 
 /* mobile layout */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
   header {
     text-align: center;
     grid-template-columns: 100% !important;
@@ -24,7 +24,6 @@
   }
   footer { text-align: center !important; }
   .heroTitle .heroInner { padding: 2.5em 1.25em 1.75em 1.25em !important; }
-  .embedDialog {
-    grid-template-columns: 100% !important;
-  }
+  .embedDialog { grid-template-columns: 100% !important; }
+  #embedToAnyWebsite { grid-template-columns: 100% !important; }
 }
