@@ -3,13 +3,13 @@ const windowsSpinnerImport = document.createElement("style");
 windowsSpinnerImport.textContent = `
   @font-face {
     font-family: "Segoe Boot Semilight";
-    src: url("https://thebelovedmoon.github.io/segoeLoaders/assets/fonts/segoe_slboot.ttf");
+    src: url("/segoeLoaders/assets/fonts/segoe_slboot.ttf");
     font-display: swap;
     font-stretch: normal;
   }
   @font-face {
     font-family: "Segoe Boot Semilight";
-    src: url("https://thebelovedmoon.github.io/segoeLoaders/assets/fonts/segoen_slboot.ttf");
+    src: url("/segoeLoaders/assets/fonts/segoen_slboot.ttf");
     font-display: swap;
     font-stretch: condensed;
   }
