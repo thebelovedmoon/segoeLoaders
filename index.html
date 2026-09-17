@@ -10,6 +10,7 @@
     <link rel="apple-touch-icon" href="https://thebelovedmoon.github.io/assets/web/favicon/maria_1_icon.png" type="image/x-icon">
     <link rel="stylesheet" href="/segoeLoaders/assets/css/_main.css" type="text/css" media="all">
     <script src="/segoeLoaders/assets/js/_main.js" type="text/javascript"></script>
+    <script src="/segoeLoaders/assets/js/segoeLoaders.js" type="text/javascript"></script>
   </head>
   <body>
     <!-- <div class="loadingScreen">
@@ -18,7 +19,7 @@
     <header>
       <div class="headerTitle">the <code>segoeLoaders</code> Project</div>
       <div class="headerNav">
-        <a rel="noopener noreferrer" href="#embedToAnyWebsite">embed</a>&emsp;<p>how it works</p>&emsp;<p>references</p>&emsp;<a rel="noopener noreferrer" href="#terms">terms of usage</a>
+        <a rel="noopener noreferrer" href="#embedToAnyWebsite">embed</a>&emsp;<p>how it works</p>&emsp;<a rel="noopener noreferrer" href="#terms">terms of usage</a>
       </div>
     </header>
     <div class="heroTitle">
@@ -27,6 +28,10 @@
         <div style="width: 100%; height: 0.5em;"></div>
         <p>the familiar Windows spinners, revisited</p>
         <p style="font-size: 62.5%;">(and ready to embed!!)</p>
+        <br>
+        <p style="font-size: 87.5%;">copy the JS link to get started:</p>
+        <div style="width: 100%; height: 0.5em;"></div>
+        <code>https://thebelovedmoon.github.io/segoeLoaders/assets/js/segoeLoaders.js</code>
       </div>
     </div>
     <div id="embedToAnyWebsite">
@@ -41,6 +46,7 @@
           <h3>parameters</h3>
           <br>
           <h4>select version</h4>
+          <p style="font-size: 62.5%; color: red;">(required)</p>
           <select title="spinner version" id="spinnerVer"
             oninput="{ document.querySelector('.finalSpinnerVersion').innerText = this.value; }">
             <option value="" disabled selected>select one..</option>
@@ -49,15 +55,16 @@
           </select>
           <div style="width: 100%; height: 0.5em;"></div>
           <h4>select rendering type</h4>
+          <p style="font-size: 62.5%; color: red;">(required)</p>
           <select title="spinner type" id="spinnerType"
             oninput="{ document.querySelector('.finalSpinnerType').innerText = this.value; }">
             <option value="" disabled selected>select one..</option>
-            <option value="normal">normal (will use Segoe Boot Semilight)</option>
-            <option value="condensed">condensed (will use Segoe Boot Semilight Condensed)</option>
+            <option value="normal">normal</option>
+            <option value="condensed">condensed</option>
           </select>
           <div style="width: 100%; height: 0.5em;"></div>
           <h4>set speed</h4>
-          <p style="font-size: 62.5%;">the greater the speed, the slower the animation.</p>
+          <p style="font-size: 62.5%;">the greater the speed, the slower the animation. <span style="color: red;">(required)</span></p>
           <input type="range" title="spinner speed" id="spinnerFPS" min="1" max="300" value="30" step="1"
             oninput="{
               document.querySelector('.viewFPSOutput').innerText = this.value;
@@ -67,10 +74,8 @@
           <div style="width: 100%; height: 0.5em;"></div>
           <h4>set size</h4>
           <div class="setASizeDialog">
-            <input type="number" title="spinner size" id="spinnerSizeNum"
-              oninput="{ document.querySelector('.finalSpinnerSizeNum').innerText = this.value; }">
-            <select title="spinner size measurement" id="spinnerSizeMeasure"
-              oninput="{ document.querySelector('.finalSpinnerSizeMeasure').innerText = this.value; }">
+            <input type="number" title="spinner size" id="spinnerSizeNum" value="25">
+            <select title="spinner size measurement" id="spinnerSizeMeasure">
               <option value="px" selected>px</option>
               <option value="em">em</option>
               <option value="rem">rem</option>
@@ -83,33 +88,40 @@
           <div style="width: 100%; height: 0.5em;"></div>
           <h4>set color</h4>
           <input type="color" title="spinner color" id="spinnerColor" value="#3d374c"
-            oninput="{
-              document.querySelector('.viewColorOutput').innerText = this.value;
-              document.querySelector('.finalSpinnerColor').innerText = this.value.replaceAll('#','');
-            }">
+            oninput="{ document.querySelector('.viewColorOutput').innerText = this.value; }">
           <p style="font-size: 62.5%;">color: <span class="viewColorOutput">#3d374c</span></p>
+          <!-- <br>
+          <p><input type="checkbox" title="set background blur" id="bgBlurEnabledToggle">&ensp;set background blur (will invoke 0.5 color alpha)</p>
+          <p style="font-size: 62.5%; color: blue;">(optional)</p> -->
           <br>
           <button style="width: max-content;" onclick="{ renderEmbedSpinner(); }">render!!</button>
         </div>
         <div class="col2">
           <h3>result</h3>
           <br>
-          <p>here's what the URL will look like:</p>
+          <p>here's what the HTML element will look like:</p>
           <div style="width: 100%; height: 0.5em;"></div>
-          <p><code class="urlParser" style="background-color: #00000020; font-size: 75%;">https://thebelovedmoon.github.io/segoeLoaders/spinner?version=<span class="finalSpinnerVersion"></span>&type=<span class="finalSpinnerType"></span>&speed=<span class="finalSpinnerSpeed">30</span>&size=<span class="finalSpinnerSizeNum"></span><span class="finalSpinnerSizeMeasure">px</span>&color=<span class="finalSpinnerColor">3d374c</span></code></p>
+          <!-- <p><code class="urlParser" style="background-color: #00000020; font-size: 75%;">https://thebelovedmoon.github.io/segoeLoaders/spinner?version=<span class="finalSpinnerVersion"></span>&type=<span class="finalSpinnerType"></span>&speed=<span class="finalSpinnerSpeed">30</span>&size=<span class="finalSpinnerSizeNum"></span><span class="finalSpinnerSizeMeasure">px</span>&color=<span class="finalSpinnerColor">3d374c</span></code></p> -->
+          <p><code class="urlParser" style="background-color: #00000020; font-size: 75%;">&lt;span class="segoeSpinner" data-spinnerversion="<span class="finalSpinnerVersion"></span>" data-spinnertype="<span class="finalSpinnerType"></span>" data-spinnerspeed="<span class="finalSpinnerSpeed">30</span>"&gt;&lt;/span&gt;</code></p>
           <div style="width: 100%; height: 0.5em;"></div>
-          <p class="copyToClipboardInstruction" style="font-size: 62.5%;">select the URL above to copy to clipboard.</p>
+          <p class="copyToClipboardInstruction" style="font-size: 62.5%;">select the element above to copy to clipboard.</p>
           <br>
           <div class="renderedSpinner">
             <h4>rendered output</h4>
             <div style="width: 100%; height: 0.5em;"></div>
-            <label>
-              <input type="checkbox" title="wallpaper is enabled" id="wallpaperEnabledToggle" onclick="{ toggleWallpaperEnable(); }"> enable background
-            </label>
+            <p><input type="checkbox" title="wallpaper is enabled" id="wallpaperEnabledToggle" onclick="{ toggleWallpaperEnable(); }">&ensp;enable background</p>
             <div style="width: 100%; height: 0.5em;"></div>
             <div class="isWallpaperEnabled">
-              <iframe src="" title="Windows Spinner (end result)"></iframe>
+              <!-- <iframe src="" title="Windows Spinner (end result)"></iframe> -->
+              <span class="renderedSpinnerOutput"></span>
             </div>
+            <div style="width: 100%; height: 0.5em;"></div>
+            <p style="font-size: 62.5%;">
+              output rendered using JavaScript function
+              <code style="background-color: #00000020;">segoeLdrs(".renderedSpinnerOutput");</code>
+              on execution, where <code style="background-color: #00000020;">.renderedSpinnerOutput</code>
+              is the target element
+            </p>
           </div>
         </div>
       </div>
@@ -154,15 +166,13 @@
           <div style="width: 100%; height: 0.5em;"></div>
         </div>
         <br>
-        <label>
-          <input type="checkbox" title="I consent to terms" id="consentToTerms" onclick="{ consentToTermsEnable(); }"> I hereby consent to terms
-        </label>
+        <p><input type="checkbox" title="I consent to terms" id="consentToTerms" onclick="{ consentToTermsEnable(); }">&ensp;I hereby consent to terms</p>
       </div>
     </div>
     <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Windows_8_booting.png" alt=""> -->
     <!-- <img src="https://betawiki.net/images/7/7f/Win11-boot-10x-anim.png" alt=""> -->
     <footer>
-      <p>Bing Daily Images powered by BitURL (locale: en-GB)</p>
+      <p>Bing Daily Images powered by BitURL (locale: en-US)</p>
       <br>
       <p><a rel="noopener noreferrer" href="https://github.com/thebelovedmoon/segoeLoaders" target="_blank">made with &#x2665; by thebelovedmoon / thebelovedmoon and associates (tbmassoc), lic. MIT</a></p>
       <p>Segoe typography &copy; <img class="inlineFoot" src="/segoeLoaders/assets/svg/msftWide.svg" alt="Microsoft Corporation">, and may be proprietary</p>

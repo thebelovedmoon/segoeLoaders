@@ -40,7 +40,13 @@ code {
 
 iframe { border: none !important; }
 
-input[type="checkbox"] { font-size: 75%; }
+p input[type="checkbox"] {
+  width: 1.25em;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  display: inline-block;
+  vertical-align: baseline;
+}
 
 .loadingScreen {
   width: 100%;
@@ -102,12 +108,12 @@ footer {
   padding: 12.5em 0;
   text-align: center;
   background-color: #000082;
-  background-image: url("https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=en-GB");
+  background-image: url("https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=en-US");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   .heroInner {
-    width: max-content;
+    width: 62.5rem;
     max-width: 100%;
     margin: 0 auto;
     padding: 2.5em 5em 1.75em 5em;
@@ -116,6 +122,7 @@ footer {
     background-color: #00000040;
     border: calc(0.125em / 2) solid #00000040;
     border-radius: 8px;
+    code { cursor: pointer; }
   }
 }
 
@@ -131,7 +138,7 @@ footer {
     gap: 1rem;
     div { text-align: center; }
     .col1 {
-      select, input, button {
+      select, input[type="range"], input[type="number"], input[type="text"], input[type="color"], button {
         font-family: inherit;
         font-size: 75%;
         width: 30rem;
@@ -165,6 +172,10 @@ footer {
         background-repeat: no-repeat;
         border-radius: 8px;
         overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
         iframe {
           width: 100%;
           height: 100%;

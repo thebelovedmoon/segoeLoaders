@@ -3,8 +3,11 @@
 
 <br>
 
-<img src="https://thebelovedmoon.github.io/assets/web/favicon/maria_1_sq.png" alt="Microsoft logo" width="48px">
-<img src="./assets/svg/msft.svg" alt="Microsoft logo" width="48px">
+<div align="center">
+
+  <img src="https://thebelovedmoon.github.io/assets/web/favicon/maria_1_sq.png" alt="Microsoft logo" width="64px">&emsp;<img src="./assets/svg/msft.svg" alt="Microsoft logo" width="64px">
+
+</div>
 
 # Windows Spinners
 
@@ -14,7 +17,9 @@ this page demonstrates how the familiar Windows spinners/throbbers (debuted sinc
 
 ## how it works
 
-this works by using the **"Segoe Boot Mono"**, which has exclusive glyphs (denoted by `U+E052` to `U+E0CB` and `U+E100` to `U+E176`) that can be used to denote the spinners by default. while there are frameworks that emulate the spinners, what makes them unique is that this is the first glyph to have the Windows 11 spinner glyph baked in.
+this works by using the **"Segoe Boot Semilight"**, which has exclusive glyphs (denoted by `U+E052` to `U+E0CB` and `U+E100` to `U+E176`) that can be used to denote the spinners by default.
+
+while there are frameworks that emulate the spinners, what makes this project unique is that **it's among the first (if not _the_ first) to have the Windows 11 spinner baked in.**
 
 normally, we call these glyphs "Private Use Areas" as they are normally unassigned by standard and by default.
 
@@ -41,12 +46,12 @@ this page has two versions of the spinners:
 
 ### two font variations
 
-alongside spinner versions, this also has two font variations:
+alongside spinner versions, this also has two variations:
 
-- `segoe_slboot.ttf`, which is the "normal" version of the font.
-- `segoen_slboot.ttf`, which is the "condensed" version of the font.
+- `segoe_slboot.ttf` -- Segoe Boot Semilight
+- `segoen_slboot.ttf` -- Segoe Boot Semilight Condensed
 
-if you want to view the fonts in detail, they can be located on `C:\Windows\Boot\Fonts`.
+if you want to see the fonts yourself, they can be located on `C:\Windows\Boot\Fonts`.
 
 ### variable FPS
 
@@ -56,9 +61,9 @@ this page lets you see the animations of the spinners in various FPS values!! to
 
 1. visit the website as noted by the link [at the beginning of this document](#windows-spinners).
 2. at the URL bar, key in the following URL query: `?version={ver}&type={typ}&fps={fps}` -- where:
-    - `{ver}` can be "1" or "2" (the spinner version)
-    - `{type}` can be "normal" or "condensed" (the font variation)
-    - `{fps}` can be any number in frames per second
+   - `{ver}` can be "1" or "2" (the spinner version)
+   - `{type}` can be "normal" or "condensed" (the font variation)
+   - `{fps}` can be any number in frames per second
 3. enjoy the spinner animation!!
 
 ### can I embed it on my website?
@@ -74,6 +79,7 @@ what's more, you can add some parts to your existing workflows and have them syn
 
 ## resources
 
+- "Did you know that the spinner seen in modern Windows boot screens is stored as a font?" by XenoPanther: https://x.com/i/status/1763984833263317265 
 - "Infinitely Cycle Through an Array" by kirupa: https://www.kirupa.com/javascript/infinitely_cycle_through_array.htm 
 - "i found something in the segoe boot semilight font" by u/Fluid_Lake4958: https://www.reddit.com/r/windows/comments/176frs8/i_found_something_in_the_segoe_boot_semilight_font 
 - "Private Use Areas" by Wikipedia: https://en.wikipedia.org/wiki/Private_Use_Areas 
@@ -81,6 +87,6 @@ what's more, you can add some parts to your existing workflows and have them syn
 
 ## disclaimer
 
-the fonts on this repository are (c) Microsoft Corporation, and may be considered proprietary. this repository utilizes these fonts for demonstration purposes.
+the fonts on this repository are © Microsoft Corporation, and may be considered proprietary. see `THIRDPARTY.txt` for more information.
 
 the source code of this repository is MIT-licensed. you may review the LICENSE file for more details.

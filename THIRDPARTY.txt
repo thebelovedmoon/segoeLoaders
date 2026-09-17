@@ -1,0 +1,15 @@
+NOTICES
+
+this repo utilizes the following third-party resources as part of this project:
+
+
+
+---------------------------------------------------------
+
+Segoe Boot Mono (assets/fonts/segmono_boot.ttf)
+Segoe Boot Semilight (assets/fonts/segoe_slboot.ttf)
+Segoe Boot Semilight Condensed (assets/fonts/segoen_slboot.ttf)
+
+assets indicated here are © Microsoft Corporation, and may be proprietary.
+
+---------------------------------------------------------
