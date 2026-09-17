@@ -86,7 +86,7 @@ function segoeLdrs(thisElmt) {
 
   // CUSTOMIZE ELEMENTS VIA CSS -- BE SURE TO INCLUDE !important
   winSpinBlk.style.color = "inherit";
-  winSpinBlk.style.fontSize = "inherit";
+  winSpinBlk.style.fontSize = "1em";
   winSpinBlk.style.display = "inline-block";
   winSpinBlk.style.verticalAlign = "baseline";
   winSpinBlk.style.pointerEvents = "none";
