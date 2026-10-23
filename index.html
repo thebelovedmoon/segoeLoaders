@@ -8,14 +8,19 @@
     <!-- <link rel="apple-touch-icon" href="/segoeLoaders/assets/svg/msft.svg" type="image/x-icon"> -->
     <link rel="icon" href="https://thebelovedmoon.github.io/assets/web/favicon/maria_1_icon.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="https://thebelovedmoon.github.io/assets/web/favicon/maria_1_icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="/segoeLoaders/assets/css/_main.css" type="text/css" media="all">
-    <script src="/segoeLoaders/assets/js/_main.js" type="text/javascript"></script>
-    <script src="/segoeLoaders/assets/js/segoeLoaders.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./assets/css/_main.css" type="text/css" media="all">
+    <script src="./assets/js/_main.js" type="text/javascript"></script>
+    <script src="./assets/js/segoeLoaders.js" type="text/javascript"></script>
   </head>
   <body>
     <!-- <div class="loadingScreen">
       <iframe src="spinner.html?version=2&type=normal&speed=30&size=5em&color=ffffff" title="Windows Spinner"></iframe>
     </div> -->
+    <div class="toaster">
+      <div class="toasterOVL">
+        <p>test text</p>
+      </div>
+    </div>
     <header>
       <div class="headerTitle">the <code>segoeLoaders</code> Project</div>
       <div class="headerNav">
@@ -31,7 +36,12 @@
         <br>
         <p style="font-size: 87.5%;">copy the JS link to get started:</p>
         <div style="width: 100%; height: 0.5em;"></div>
-        <code>https://thebelovedmoon.github.io/segoeLoaders/assets/js/segoeLoaders.js</code>
+        <code onclick="{
+          customAlert('link copied to clipboard');
+          navigator.clipboard.writeText(this.innerText);
+        }">
+          https://thebelovedmoon.github.io/segoeLoaders/assets/js/segoeLoaders.js
+        </code>
       </div>
     </div>
     <div id="embedToAnyWebsite">
@@ -94,7 +104,7 @@
           <p><input type="checkbox" title="set background blur" id="bgBlurEnabledToggle">&ensp;set background blur (will invoke 0.5 color alpha)</p>
           <p style="font-size: 62.5%; color: blue;">(optional)</p> -->
           <br>
-          <button style="width: max-content;" onclick="{ renderEmbedSpinner(); }">render!!</button>
+          <button style="width: max-content; cursor: pointer;" onclick="{ renderEmbedSpinner(); }">render!!</button>
         </div>
         <div class="col2">
           <h3>result</h3>
@@ -138,13 +148,13 @@
           <div style="width: 100%; height: 0.5em;"></div>
           <p>
             some projects emulate the innovation that led to the creation of prank and/or
-            malicious websites that trick the user into believing the spinners were
-            legitimate. <b>please read the entire terms of usage for the full details.</b>
+            malicious interfaces that trick the user into believing such were legitimate.
+            <b>please read the entire terms of usage for the full details.</b>
           </p>
         </blockquote>
         <br>
         <div>
-          <h3>scope of this project</h3>
+          <h3>I. scope of this project</h3>
           <div style="width: 100%; height: 0.5em;"></div>
           <p>
             this project harnesses the complexity of Unicode's Private Use Areas (PUAs)
@@ -155,15 +165,108 @@
           <p>specifically, this project aims to tackle the following objectives:</p>
           <div style="width: 100%; height: 0.5em;"></div>
           <ul>
-            <li>bring the true-to-code nature of Windows spinners beyond the boot sequence</li>
+            <li>
+              bring the true-to-code nature of Windows spinners beyond the boot sequence
+              -- severely limiting its DOM overhead
+            </li>
             <li>enable visual customization for a personalized look</li>
-            <li>emphasis on embeddability -- make the spinners run alongside any web project</li>
+            <li>
+              emphasis on embeddability -- make the spinners run alongside any web project
+            </li>
           </ul>
         </div>
         <br>
         <div>
-          <h3>the embeddability statute</h3>
+          <h3>II. the embeddability statute</h3>
           <div style="width: 100%; height: 0.5em;"></div>
+          <p>
+            this project was initially a simple web demonstration of how Segoe Boot
+            Semilight and Private Use Areas intertwine on boot, in the same way Segoe MDL2
+            Assets and Segoe Fluent Icons do in a normal Windows session.
+          </p>
+          <div style="width: 100%; height: 0.5em;"></div>
+          <p>
+            however, with the need to utilize this spinner for the modern web, this
+            statute is enforced in order to ensure the legitimate usage of this tool.
+          </p>
+          <div style="width: 100%; height: 0.5em;"></div>
+          <h4 class="subTerms">a. appropriate places</h4>
+          <div style="width: 100%; height: 0.25em;"></div>
+          <p class="subTerms">
+            the embeds may be used solely in places where spinners are genuinely
+            applicable, such as loading interfaces and interactive elements.
+          </p>
+          <div style="width: 100%; height: 0.25em;"></div>
+          <p class="subTerms">
+            there is no restriction in utilization of the embeds; however, the developer
+            must ensure that the utilization is acted in good faith and does not
+            compromise the end user's experience.
+          </p>
+          <div style="width: 100%; height: 0.5em;"></div>
+          <h4 class="subTerms">b. psychological exploitation</h4>
+          <div style="width: 100%; height: 0.25em;"></div>
+          <p class="subTerms">
+            there have been reports of replicated spinners being used for instances that
+            invoke psychological exploitation -- even if it's a mere demonstration or
+            simulation.
+          </p>
+          <div style="width: 100%; height: 0.25em;"></div>
+          <p class="subTerms">
+            in extreme cases, such exploitations lead to rampant harm for end-users -- as
+            demonstrated by Big Head with their fake-update infostealer and ransomware in
+            2023.
+          </p>
+          <div style="width: 100%; height: 0.25em;"></div>
+          <h4 class="subTerms">c. enforcement</h4>
+          <div style="width: 100%; height: 0.25em;"></div>
+          <p class="subTerms">
+            <b>
+              in conjunction, the enforcing portion of this statute is that none of the
+              embeds must NOT bode harm on the end-user; and that the developer MUST
+              acknowledge the risk and responsibility in utilizing this embed for their
+              web projects.
+            </b>
+          </p>
+        </div>
+        <br>
+        <div>
+          <h3>III. stance on "fake update" websites</h3>
+          <div style="width: 100%; height: 0.5em;"></div>
+          <p>
+            there are a number of "fake update" simulations and its equivalents -- like
+            fakeupdate.net -- that loosely mimic the legitimate Windows Update screens.
+            even though they are harmless, they still constitute to psychological
+            exploitation as briefly explained in section II-a.
+          </p>
+          <div style="width: 100%; height: 0.5em;"></div>
+          <p>
+            as such, this project discourages the use of this embed for such nefarious
+            purposes that exploit such behaviors.
+            <b>enforcement is indicated in section II-c.</b>
+          </p>
+        </div>
+        <br>
+        <div>
+          <h3>IV. third-party notices</h3>
+          <div style="width: 100%; height: 0.5em;"></div>
+          <p>
+            portions of this project make use of third-party assets in order to enhance
+            this experience, in which some of them may be proprietary.
+          </p>
+          <div style="width: 100%; height: 0.5em;"></div>
+          <p>
+            we have utilized such assets -- in good faith -- in hopes to maintain accuracy
+            as the proprietors intended.
+          </p>
+          <div style="width: 100%; height: 0.5em;"></div>
+          <p>
+            if a developer wishes to put it in a project, one must be sure to add the
+            contents of both
+            <code>LICENSE</code> and <code>THIRDPARTY.txt</code> in a separate
+            <code>THIRDPARTY</code> file or anywhere in their website that publicly states
+            the license designations. such files are easily accessed from our GitHub
+            repository.
+          </p>
         </div>
         <br>
         <p><input type="checkbox" title="I consent to terms" id="consentToTerms" onclick="{ consentToTermsEnable(); }">&ensp;I hereby consent to terms</p>

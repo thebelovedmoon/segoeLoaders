@@ -8,7 +8,8 @@ function renderEmbedSpinner() {
   // let bgBlurChk = document.querySelector("#bgBlurEnabledToggle").checked;
   
   if (!version || !type || !speed) {
-    return alert("all required fields must have a value.");
+    // return alert("all required fields must have a value.");
+    return customAlert("all required fields must have a value");
   } else {
     let renderedOut = document.querySelector(".renderedSpinnerOutput");
     renderedOut.dataset.spinnerversion = version;
@@ -37,4 +38,27 @@ function toggleWallpaperEnable() {
     tgle.checked = false;
     document.querySelector(".isWallpaperEnabled").style.backgroundImage = "none";
   }
+}
+
+function customAlert(txt) {
+  if (txt.includes("required")) {
+    document.querySelector(".toasterOVL").style.backgroundColor = "red";
+    document.querySelector(".toasterOVL").style.color = "white";
+  } else {
+    document.querySelector(".toasterOVL").style.backgroundColor = "white";
+    document.querySelector(".toasterOVL").style.color = "black";
+  }
+  document.querySelector(".toasterOVL").innerText = txt;
+  document.querySelector(".toaster").style.display = "block";
+  setTimeout(() => {
+    document.querySelector(".toasterOVL").style.opacity = "1";
+    document.querySelector(".toasterOVL").style.transform = "initial";
+    setTimeout(() => {
+      document.querySelector(".toasterOVL").style.opacity = "0";
+      document.querySelector(".toasterOVL").style.transform = "translateY(1.25em)";
+      setTimeout(() => {
+        document.querySelector(".toaster").style.display = "none";
+      }, 750);
+    }, 2500);
+  }, 0);
 }

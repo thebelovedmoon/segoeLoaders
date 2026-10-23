@@ -122,7 +122,7 @@ footer {
     background-color: #00000040;
     border: calc(0.125em / 2) solid #00000040;
     border-radius: 8px;
-    code { cursor: pointer; }
+    code:nth-child(2n) { cursor: pointer; }
   }
 }
 
@@ -195,5 +195,37 @@ footer {
     padding: 1em;
     /* color: white; */
     font-family: "Inter", sans-serif;
+  }
+  .subTerms { padding-left: 1em !important; }
+  code { background-color: #00000020; }
+}
+
+.toaster {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: none;
+  z-index: 499;
+  pointer-events: none;
+  .toasterOVL {
+    width: max-content;
+    max-width: 100%;
+    height: max-content;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1em;
+    /* background-color: white; */
+    /* color: black; */
+    padding: 0.25em 0.75em;
+    border: calc(0.125em / 2) solid #0078d4;
+    border-radius: 8px;
+    text-align: center;
+    -webkit-transition: 0.75s;
+    -moz-transition: 0.75s;
+    -o-transition: 0.75s;
+    transition: 0.75s;
+    transform: translateY(1.25em);
+    opacity: 0;
   }
 }
